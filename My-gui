@@ -152,7 +152,7 @@ local function countdownAndRandomize(button)
     end
     flashEffect(button)
     randomizeNearbyEggs()
-    button.Text = "Randomize Pets"
+    button.Text = "🔁Randomize Pets"
 end
 
 -- ðŸŒ¿ GUI Setup
@@ -171,7 +171,7 @@ Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
 local title = Instance.new("TextLabel", frame)
 title.Size = UDim2.new(1, 0, 0, 30)
 title.BackgroundTransparency = 1
-title.Text = "Pet Randomizer by keanGoat"
+title.Text = "Pet Randomizer by kean"
 title.Font = Enum.Font.FredokaOne
 title.TextSize = 22
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -214,13 +214,13 @@ local toggleBtn = Instance.new("TextButton", frame)
 toggleBtn.Size = UDim2.new(1, -20, 0, 40)
 toggleBtn.Position = UDim2.new(0, 10, 0, 90)
 toggleBtn.BackgroundColor3 = Color3.fromRGB(205, 92, 122) -- Light pink
-toggleBtn.Text = "ESP: ON"
+toggleBtn.Text = "🔛ESP: ON"
 toggleBtn.TextSize = 18
 toggleBtn.Font = Enum.Font.FredokaOne
 toggleBtn.TextColor3 = Color3.new(1, 1, 1)
 toggleBtn.MouseButton1Click:Connect(function()
     espEnabled = not espEnabled
-    toggleBtn.Text = espEnabled and "ESP: ON" or "ESP: OFF"
+    toggleBtn.Text = espEnabled and "🔛ESP: ON" or "📴ESP: OFF"
     for _, egg in pairs(getPlayerGardenEggs(60)) do
         if espEnabled then
             applyEggESP(egg, truePetMap[egg])
@@ -235,7 +235,7 @@ local autoBtn = Instance.new("TextButton", frame)
 autoBtn.Size = UDim2.new(1, -20, 0, 40)
 autoBtn.Position = UDim2.new(0, 10, 0, 140)
 autoBtn.BackgroundColor3 = Color3.fromRGB(134, 87, 133) -- Light blue
-autoBtn.Text = "Auto Randomize: OFF"
+autoBtn.Text = "📴Auto Randomize: OFF"
 autoBtn.TextSize = 16
 autoBtn.Font = Enum.Font.FredokaOne
 autoBtn.TextColor3 = Color3.new(1, 1, 1)
@@ -250,14 +250,14 @@ local bestPets = {
 
 autoBtn.MouseButton1Click:Connect(function()
     autoRunning = not autoRunning
-    autoBtn.Text = autoRunning and "Auto Randomize: ON" or "Auto Randomize: OFF"
+    autoBtn.Text = autoRunning and "🔛Auto Randomize: ON" or "📴Auto Randomize: OFF"
     coroutine.wrap(function()
         while autoRunning do
             countdownAndRandomize(randomizeBtn)
             for _, petName in pairs(truePetMap) do
                 if bestPets[petName] then
                     autoRunning = false
-                    autoBtn.Text = "Auto Randomize: OFF"
+                    autoBtn.Text = "📴Auto Randomize: OFF"
                     return
                 end
             end
@@ -271,7 +271,7 @@ local loadAgeBtn = Instance.new("TextButton", frame)
 loadAgeBtn.Size = UDim2.new(1, -20, 0, 40)
 loadAgeBtn.Position = UDim2.new(0, 10, 0, 190)
 loadAgeBtn.BackgroundColor3 = Color3.fromRGB(40, 43, 74) -- Dark purple
-loadAgeBtn.Text = "Load Mutation Randomizer"
+loadAgeBtn.Text = "🔁Load Mutation Randomizer"
 loadAgeBtn.TextSize = 16
 loadAgeBtn.Font = Enum.Font.FredokaOne
 loadAgeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -285,7 +285,7 @@ local mutationBtn = Instance.new("TextButton", frame)
 mutationBtn.Size = UDim2.new(1, -20, 0, 40)
 mutationBtn.Position = UDim2.new(0, 10, 0, 240)
 mutationBtn.BackgroundColor3 = Color3.fromRGB(216, 148, 169) -- Pink
-mutationBtn.Text = "Load Spawner Script"
+mutationBtn.Text = "🔁 Load Spawner Script"
 mutationBtn.TextSize = 16
 mutationBtn.Font = Enum.Font.FredokaOne
 mutationBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
