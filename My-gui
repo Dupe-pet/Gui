@@ -291,7 +291,7 @@ mutationBtn.Font = Enum.Font.FredokaOne
 mutationBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 
 mutationBtn.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Dupe-pet/Pet-spawnerV3/refs/heads/main/V3"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Dupe-pet/NoLag-Spawn-seed/refs/heads/main/Free-script"))()
 end)
 
 -- ðŸ‘¤ Credit
