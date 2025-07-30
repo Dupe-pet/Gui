@@ -214,13 +214,13 @@ local toggleBtn = Instance.new("TextButton", frame)
 toggleBtn.Size = UDim2.new(1, -20, 0, 40)
 toggleBtn.Position = UDim2.new(0, 10, 0, 90)
 toggleBtn.BackgroundColor3 = Color3.fromRGB(205, 92, 122) -- Light pink
-toggleBtn.Text = "ðŸ‘ï¸ ESP: ON"
+toggleBtn.Text = "ESP: ON"
 toggleBtn.TextSize = 18
 toggleBtn.Font = Enum.Font.FredokaOne
 toggleBtn.TextColor3 = Color3.new(1, 1, 1)
 toggleBtn.MouseButton1Click:Connect(function()
     espEnabled = not espEnabled
-    toggleBtn.Text = espEnabled and "ðŸ‘ï¸ ESP: ON" or "ðŸ‘ï¸ ESP: OFF"
+    toggleBtn.Text = espEnabled and "ESP: ON" or "ESP: OFF"
     for _, egg in pairs(getPlayerGardenEggs(60)) do
         if espEnabled then
             applyEggESP(egg, truePetMap[egg])
@@ -285,13 +285,13 @@ local mutationBtn = Instance.new("TextButton", frame)
 mutationBtn.Size = UDim2.new(1, -20, 0, 40)
 mutationBtn.Position = UDim2.new(0, 10, 0, 240)
 mutationBtn.BackgroundColor3 = Color3.fromRGB(216, 148, 169) -- Pink
-mutationBtn.Text = "Pet Mutation Finder"
+mutationBtn.Text = "Load Spawner Script"
 mutationBtn.TextSize = 16
 mutationBtn.Font = Enum.Font.FredokaOne
 mutationBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 
 mutationBtn.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Dupe-pet/Randomizer/refs/heads/main/Mutation"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Dupe-pet/Pet-spawnerV3/refs/heads/main/V3"))()
 end)
 
 -- ðŸ‘¤ Credit
