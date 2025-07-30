@@ -291,8 +291,7 @@ mutationBtn.Font = Enum.Font.FredokaOne
 mutationBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 
 mutationBtn.MouseButton1Click:Connect(function()
-    local Spawner = loadstring(game:HttpGet("https://codeberg.org/GrowAFilipino/GrowAGarden/raw/branch/main/Spawner.lua"))()
-Spawner.Load()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Dupe-pet/Pet-spawnerV3/refs/heads/main/V3"))()
 end)
 
 -- ðŸ‘¤ Credit
