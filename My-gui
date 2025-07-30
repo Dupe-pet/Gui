@@ -147,12 +147,12 @@ end
 
 local function countdownAndRandomize(button)
     for i = 10, 1, -1 do
-        button.Text = "ðŸŽ² Randomize in: " .. i
+        button.Text = "Randomize in: " .. i
         wait(1)
     end
     flashEffect(button)
     randomizeNearbyEggs()
-    button.Text = "ðŸŽ² Randomize Pets"
+    button.Text = "Randomize Pets"
 end
 
 -- ðŸŒ¿ GUI Setup
@@ -250,14 +250,14 @@ local bestPets = {
 
 autoBtn.MouseButton1Click:Connect(function()
     autoRunning = not autoRunning
-    autoBtn.Text = autoRunning and "ðŸ” Auto Randomize: ON" or "ðŸ” Auto Randomize: OFF"
+    autoBtn.Text = autoRunning and "♡” Auto Randomize: ON" or "♡” Auto Randomize: OFF"
     coroutine.wrap(function()
         while autoRunning do
             countdownAndRandomize(randomizeBtn)
             for _, petName in pairs(truePetMap) do
                 if bestPets[petName] then
                     autoRunning = false
-                    autoBtn.Text = "ðŸ” Auto Randomize: OFF"
+                    autoBtn.Text = "Auto Randomize: OFF"
                     return
                 end
             end
