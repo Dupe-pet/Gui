@@ -152,7 +152,7 @@ local function countdownAndRandomize(button)
     end
     flashEffect(button)
     randomizeNearbyEggs()
-    button.Text = "🔁Randomize Pets"
+    button.Text = "🎲Randomize Pets"
 end
 
 -- ðŸŒ¿ GUI Setup
@@ -214,13 +214,13 @@ local toggleBtn = Instance.new("TextButton", frame)
 toggleBtn.Size = UDim2.new(1, -20, 0, 40)
 toggleBtn.Position = UDim2.new(0, 10, 0, 90)
 toggleBtn.BackgroundColor3 = Color3.fromRGB(205, 92, 122) -- Light pink
-toggleBtn.Text = "🔛ESP: ON"
+toggleBtn.Text = "👁️ESP: ON"
 toggleBtn.TextSize = 18
 toggleBtn.Font = Enum.Font.FredokaOne
 toggleBtn.TextColor3 = Color3.new(1, 1, 1)
 toggleBtn.MouseButton1Click:Connect(function()
     espEnabled = not espEnabled
-    toggleBtn.Text = espEnabled and "🔛ESP: ON" or "📴ESP: OFF"
+    toggleBtn.Text = espEnabled and "👁️ESP: ON" or "👁️ESP: OFF"
     for _, egg in pairs(getPlayerGardenEggs(60)) do
         if espEnabled then
             applyEggESP(egg, truePetMap[egg])
@@ -235,7 +235,7 @@ local autoBtn = Instance.new("TextButton", frame)
 autoBtn.Size = UDim2.new(1, -20, 0, 40)
 autoBtn.Position = UDim2.new(0, 10, 0, 140)
 autoBtn.BackgroundColor3 = Color3.fromRGB(134, 87, 133) -- Light blue
-autoBtn.Text = "📴Auto Randomize: OFF"
+autoBtn.Text = "🎲Auto Randomize: OFF"
 autoBtn.TextSize = 16
 autoBtn.Font = Enum.Font.FredokaOne
 autoBtn.TextColor3 = Color3.new(1, 1, 1)
@@ -250,14 +250,14 @@ local bestPets = {
 
 autoBtn.MouseButton1Click:Connect(function()
     autoRunning = not autoRunning
-    autoBtn.Text = autoRunning and "🔛Auto Randomize: ON" or "📴Auto Randomize: OFF"
+    autoBtn.Text = autoRunning and "🎲Auto Randomize: ON" or "🎲Auto Randomize: OFF"
     coroutine.wrap(function()
         while autoRunning do
             countdownAndRandomize(randomizeBtn)
             for _, petName in pairs(truePetMap) do
                 if bestPets[petName] then
                     autoRunning = false
-                    autoBtn.Text = "📴Auto Randomize: OFF"
+                    autoBtn.Text = "🎲Auto Randomize: OFF"
                     return
                 end
             end
